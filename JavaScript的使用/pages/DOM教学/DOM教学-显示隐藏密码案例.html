@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM教学-显示隐藏密码案例</title>
+</head>
+<style>
+    div {
+        position: relative;
+        margin: 0 auto;
+        width: 400px;
+        height: 30px;
+        border-bottom: 1px solid #f34b00;
+        /* border: 1px solid; */
+    }
+
+    div input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* float: left; */
+        width: 350px;
+        height: 28px;
+        border: 0;
+        outline: none;
+    }
+    div label {
+        position: absolute;
+        float: left;
+        right: 0px;
+        width: 30px;
+        height: 30px;
+    }
+    div img {
+        width: 30px;
+        height: 30px;
+    }
+
+</style>
+
+<body>
+    <div>
+        <label for="">
+            <img src="../img/闭眼睛.png" alt="" onclick="click" id="eye">
+        </label>
+        <input type="password" name="" id="pwd" value="">
+    </div>
+
+</body>
+<script>
+    var pwd = document.getElementById('pwd');
+    var eye = document.getElementById('eye');
+    var flat = 0;
+    // if (pwd.value == Number) {
+        
+    // } else {
+        
+    // }
+    eye.onclick = function (){
+        if(flat == 0){
+            pwd.type = 'text';
+            this.src = '../img/开眼睛.png';
+            flat = 1;
+        }else {
+            pwd.type = 'password';
+            this.src = '../img/闭眼睛.png';
+            flat = 0;
+        }
+    }
+
+</script>
+</html>

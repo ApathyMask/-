@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p id="demo"></p>
+		<p id="demo1"></p>
+	</body>
+	
+	<script>
+		var name =null;
+		var age = new Array();
+		document.getElementById("demo").innerHTML = 
+		typeof "John" + "<br>" +
+		typeof !!3.14 + "<br>" +
+		typeof 3.14 + "<br>" +
+		typeof false + "<br>" +
+		typeof undefined + "<br>" +
+		typeof age + "<br>" +
+		typeof name + "<br>" +
+		typeof [1,2,3,4] + "<br>" +
+		typeof {name:'guo',age:22};
+		
+		var cars=new Array();
+		cars[0]="Saab";
+		cars[1]="Volvo";
+		cars[2]="BMW";
+		// 判断是否支持该方法
+		if (Array.isArray) {
+		    if(Array.isArray(cars)) {
+		        document.write("该对象是一个数组。" + "<br>") ;
+		    }
+		};
+		if(cars instanceof Array) {
+			  document.write("该对象是一个数组。") ;
+		}
+		
+		// var myObj = "";
+		// if (typeof myObj !== "undefined" && myObj !== null) {
+		// 	document.write("shi")
+		// }
+		
+		// var num = 1;
+		// console.log(num.toString());//1
+		// var str ="";
+		// console.log(str.toString());//Cannot read properties of null (reading 'toString')
+		// console.log(str+"");// null
+		
+		
+		var person = {
+		    firstName: "John",
+		    lastName : "Doe",
+		    id : 5566,
+		    fullName : function() 
+			{
+		       return this.firstName + " " + this.lastName;
+		    }
+		};
+		document.getElementById("demo1").innerHTML = person.fullName();
+		
+		var pa = {
+		    foo: 16,
+		    [ Symbol( "bar" ) ]: "hello world",
+			[ Symbol("abc")]: "i love you",
+		    baz: true
+		};
+		document.write(Object.getOwnPropertyNames( pa ));
+		//Object.getOwnPropertyNames( pa ); // [ "foo","baz" ]
+		//如果要取得对象的符号属性：
+		console.log(Object.getOwnPropertySymbols( pa));
+		//Object.getOwnPropertySymbols( pa); // [ Symbol(bar) ]
+	</script>
+	
+</html>

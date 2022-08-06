@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function checkArray(array) {
+        // 两种办法检测是否是数组
+        let arr = [];
+        let obj = {};
+        // one
+        console.log(arr instanceof Array); // true
+        console.log(obj instanceof Array); // false
+        console.log(obj instanceof Object); // true
+        // two
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+        // console.log(Object.isObject(arr)); // 报错，没有这个东西
+        // return arr,obj
+    }
+    // console.log(checkArray());
+    checkArray();
+
+
+
+
+    function addArray(add) {
+        // 原数组增加新元素的一些实用方法
+        // 第一个 push() 在数组后面新增新元素
+        let arr1 = [1, 2, 3, 4];
+        let arr1Length = arr1.push(19, 'pink老师');
+        console.log(arr1Length); // 返回长度
+        console.log(arr1); // 返回新数组
+        // 第二个 unshift() 在原数组前新增新元素
+        let arr1Length1 = arr1.unshift('qian', 123, 456, 789);
+        console.log(arr1Length1); // 返回长度
+        console.log(arr1); // 返回新数组
+        // return arr1
+    }
+    // console.log(addArray());
+    addArray();
+
+    function delArray(add) {
+        // 原真正数组删除原元素的一些实用方法
+        // 第一个 pop() 删除最后一个元素 ，无参数 ，返回删除的元素
+        let arr1 = [1, 2, 3, 4];
+        let arr1Length = arr1.pop(); 
+        console.log(arr1Length); // 返回 4
+        console.log(arr1); // 返回新数组 [1,2,3]
+        // 第二个 shift() 删除原数组前面第一个元素 ，无参数 ，返回删除的元素
+        let arr1Length1 = arr1.shift(); 
+        console.log(arr1Length1); // 返回 1
+        console.log(arr1); // 返回新数组 [2,3]
+        // return arr1
+    }
+    // console.log(addArray());
+    delArray();
+
+</script>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="inner">inner</div>
+    <hr />
+    <div class="create">create</div>
+</body>
+<!-- <script>
+    // 1. innerHTML 创建元素
+    var d1 = +new Date();
+    var inner = document.querySelector('.inner');
+    for (let i = 0; i <= 1000; i++) {
+        // const element = array[i];
+        inner.innerHTML += '<a href="#">inner百度</a>';
+    }
+    var d2 = +new Date();
+    // console.log(d2-d1); // 880~ 更耗时
+    // 2. document.createElement() 创建元素
+    var d3 = +new Date();
+    var create = document.querySelector('.create');
+    for (let i = 0; i <= 1000; i++) {
+        var a = document.createElement('a');
+        create.appendChild(a);
+        // console.log(a);
+    }
+    var d4 = +new Date();
+    // console.log(d4-d3); // 2~
+
+</script> -->
+
+<script>
+    // 利用 数组的push 后自增元素的方法加入标签，然后用join(''), ''空的字符串 可以去除返回的元素之间的，逗号
+    // 这样比innerHTML创建标签还要快
+    var d1 = +new Date();
+    var inner = document.querySelector('.inner');
+    var arr = [];
+    for (let i = 0; i <= 100; i++) {
+        arr.push('<a href="#">百度</a>');
+    }
+    // console.log(arr);
+    inner.innerHTML = arr.join('');
+    var d2 = +new Date();
+    console.log(d2 - d1);
+
+
+
+    var o = {
+        a: {
+            b: 2
+        }
+    };
+    // 两个对象被创建，一个作为另一个的属性被引用，另一个被分配给变量 o
+    // 很显然，没有一个可以被垃圾收集
+
+
+    var o2 = o; // o2 变量是第二个对“这个对象”的引用
+
+    o = 1;      // 现在，“这个对象”只有一个 o2 变量的引用了，“这个对象”的原始引用 o 已经没有
+
+    var oa = o2.a; // 引用“这个对象”的 a 属性
+    // 现在，“这个对象”有两个引用了，一个是 o2，一个是 oa
+
+    o2 = "yo"; // 虽然最初的对象现在已经是零引用了，可以被垃圾回收了
+    // 但是它的属性 a 的对象还在被 oa 引用，所以还不能回收
+
+    oa = null; // a 属性的那个对象现在也是零引用了
+           // 它可以被垃圾回收了
+</script>
+
+</html>

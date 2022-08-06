@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../img/封装函数冒泡排序.jpg" alt="" srcset="">
+</body>
+
+<script>
+
+    // 利用函数冒泡排序 sort 排序
+    function sort(array) {
+        for (let i = 0; i < array.length-1; i++) {
+            for (let j = 0; j < array.length-i-1; j++) {
+                if (array[j] > array[j+1]) {
+                    const element = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = element;
+                }
+                
+            }
+            
+        }
+        return array
+    }
+
+    const array1 = sort([1,4,2,9]);
+    console.log(array1);
+    array1 = 'asdfs'; // const定义的变量无法再修改，作为常数使用，let 和var 可以，同一个作用域或上一级
+    console.log(array1);
+</script>
+</html>

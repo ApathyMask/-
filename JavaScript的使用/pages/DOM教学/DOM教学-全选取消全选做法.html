@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .All {
+        position: relative;
+        width: 100px;
+        height: 200px;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+
+    input {
+        display: block;
+        margin-top: 20px;
+    }
+
+    span {
+        display: inline-block;
+        width: 100px;
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+    <div class="All">
+        <span>
+            <input id="j_All" type="checkbox">
+        </span>
+        <div id="tabs">
+            <input type="checkbox">
+            <input type="checkbox">
+        </div>
+    </div>
+    <script>
+        var all = document.getElementById('j_All');
+        var tbs = document.getElementById('tabs').getElementsByTagName('input');
+        // console.log(tabs);
+        // console.log(all.checked);
+        all.onclick = function (){
+            // console.log(this.checked);
+            // 1. 点击全选按钮全选，取消全选则全部取消
+            for (let i = 0; i < tbs.length; i++) {
+                tbs[i].checked = this.checked;
+                // console.log(tbs[i].checked);
+            }
+        };
+        // 2. 所有按钮全选才全选，有一个没有选择则不勾选全选按钮
+        // (1) 全部遍历一遍选择复合框
+        for (var i = 0; i < tbs.length; i++) {
+            // (2) 遍历复选框绑定点击事件
+            tbs[i].onclick = function() {
+                // (3) 声明创建一个变量Boolean，赋值于全选复选框的checked属性
+                var flag = true;
+                // (4) 每一次遍历复选框再遍历一遍，判断是否都勾选
+                for (var i = 0; i < tbs.length; i++) {
+                    // (5) 判断伪数组tbs里全部是否都勾选   !true == false
+                    if (!tbs[i].checked) {
+                    // (6) 如果有一个元素是false ，则flag变量为false
+                    flag = false;
+                    // (7) break跳出本次内循环for
+                    break;
+                    }
+                }
+                // (8) 内循环for遍历完之后 flag变量 赋值 给全选按钮的 属性checked
+                all.checked = flag;
+            }
+            
+        };
+        
+
+    </script>
+</body>
+
+</html>

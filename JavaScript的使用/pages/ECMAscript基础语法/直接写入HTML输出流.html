@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<b>冷知识:<br>
+		JavaScript 是脚本语言，浏览器会在读取代码时，
+		<ins style="background-color: limegreen;">逐行地执行</ins>
+		脚本代码。<br>
+		而对于传统编程来说，会在执行前对所有代码进行编译。
+		</b><hr>
+		<p>现在时间是：</p>
+		<button title="点了之后会覆盖原文档" type="button" onclick="date1()">点击</button>
+		<script>
+			//在文档已完成加载后通过函数执行document.write，整个页面将被覆盖
+			function date1() {
+				document.write(Date());
+			}
+		</script>
+		<hr>
+		<p>
+			您会经常看到 document.getElementById("some id")。这个方法是 HTML DOM 中定义的。
+			DOM (Document Object Model)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。
+		</p>
+		<p id="demo">JavaScript能改变HTML的要素内容</p>
+		<button title="点了之后会执行函数生成新语句" type="button" onclick="myfunction()">点击这里</button><hr>
+		<button type="button" onclick="alert(Date())">点我弹出时间警告窗！</button>
+		<hr>
+		<p>JavaScript能够直接写入HTML输出流中：</p>
+		<script>
+			
+			document.write("<h1>这是 \ 一个 \ 标题</h1>")//这里的\是进行换行
+			document.write("<p>这是一个段落</p>")
+			
+			
+			function myfunction() {
+				x = document.getElementById("demo")
+				//innerHTML插入内容,写到HTML元素中
+				x.innerHTML = "Hello JavaScript！"
+				x.style.color = "#ff0000"
+			}
+		</script>
+		<p>
+			只能在HTML中写入document.write。如果在文档加载中使用(如函数)，会覆盖整个文档
+		</p>
+		<hr>
+		
+		<!-- 判断属性是否为数字 -->
+		<p>判断属性是否为数字</p>
+		<input type="text" id="demo1">
+		<button title="给我点啊" type="button" onclick="myfunction1()">点击</button><hr>
+		<script>
+			function myfunction1() {
+				var x1 = document.getElementById("demo1").value;
+				//value指数值的属性
+				if (x1 = "" || isNaN(x1)) {
+					//isNaN()是判断值是否为数字
+					alert("不是数字");
+					//alert()的功能是用于显示带有一条指定消息和一个OK按钮的警告框
+				}else {
+					alert("是数字");
+				}
+			};
+			//window.alert("直接弹出警告窗");
+			//console.log("写在了控制面板中");
+			//window.alert(5+6)
+		</script>
+		<!-- 当然这只能直接修改，而不能通过响应来修改 -->
+		<p>
+			当然，专业用于是这么解释用法的：首先呢，如需通过JavaScript来访问HTML的某个元素，
+			可以使用document.getelementbyid("id")方法。通过id属性来标识HTML元素，
+			并innerHTML来获取或插入元素内容，下面是插入内容
+		</p>
+		<p id="demo2">改变HTML中的元素</p><hr>
+		<script>
+			document.getElementById("demo2").innerHTML = "段落已修改。"
+		</script>
+		<!-- 写入控制面板 -->
+		<!-- <script>
+			a = 5;
+			b = 6;
+			c = a + b;
+			console.log(c);
+		</script> -->
+		<p id="demo3"></p>
+		<script>
+			document.getElementById("demo3").innerHTML = 123e5 + "<br>" + 'John Doe' + "<br>" + 5 * 6;
+			
+		</script>
+		<hr>
+		<img title="字面量图片" src="../img/zimainliang.jpg" alt="字面量" width="100%" height="100%">
+		<script>
+			
+		</script>
+	</body>
+	
+	
+	<style lang="scss">
+		body {
+			background-color: #bababa;
+			
+		}
+		hr {
+			border: 2px dashed black;
+		}
+	</style>
+</html>

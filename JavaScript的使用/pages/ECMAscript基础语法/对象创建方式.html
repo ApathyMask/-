@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//创建函数
+		function demo() {
+			//创建对象
+			var obj = new Object();
+			//设置对象属性名并赋值
+			obj.name = "郭奕航";
+			obj.age = "22";
+			obj.fristF = function() {};
+			obj.secondF = function() {};
+			return obj;
+		}
+		//给函数创建对象变量名
+		var one = demo();
+		//调用输出
+		document.write(one.age);
+		//document.write(one.fristF)
+		
+		//two
+		function demo1() {
+			this.name = "郭奕航";
+			
+		}
+		var two = new demo1;
+		document.write(two.name);
+	</script>
+</html>

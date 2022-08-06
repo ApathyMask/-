@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造对象</title>
+</head>
+
+<body>
+    <img src="../img/构造函数中new关键字执行过程.jpg" alt="">
+    <img src="../img/构造函数中new生动讲解.jpg" alt="">
+    <img src="../img/对象遍历用到for(var k in object){}.jpg" alt="">
+</body>
+
+<script>
+    // 构造函数名 大写 实参传给形参
+    function Star(uname, age, sex) {
+        this.name = uname;
+        this.age = age;
+        this.sex = sex;
+        this.sing = function(sang){
+            console.log(sang);
+        }
+        // 不需要return 直接返回结果
+    }
+    // 变量名 = 调用构造函数并给实参
+    var ldh = new Star('刘德华', 45, '男');
+    // 返回变量的类型
+    console.log(typeof ldh);
+    console.log(ldh);
+    console.log(ldh.name);
+    console.log(ldh['age']);
+    ldh.sing('唱歌~')
+</script>
+
+</html>

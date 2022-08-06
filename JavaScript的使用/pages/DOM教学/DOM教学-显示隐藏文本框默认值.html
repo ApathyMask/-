@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM教学-显示隐藏文本框默认值</title>
+</head>
+<style>
+    input {
+        color: #888;
+        outline: none;
+    }
+</style>
+<body>
+    <input type="text" name="" id="text" value="手机">
+    <script>
+        var text = document.getElementById('text');
+        text.onfocus = function (){
+           if (this.value === '手机') {
+             this.value = '';
+             this.style.color = '#333';
+           }
+            
+        }
+        text.onblur = function (){
+            if (this.value === '') {
+                this.value = '手机';
+                this.style.color = '#888';
+            }else {
+                this.style.color = '#333';
+            }
+            
+        }
+    </script>
+</body>
+</html>

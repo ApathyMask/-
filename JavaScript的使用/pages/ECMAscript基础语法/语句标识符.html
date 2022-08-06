@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<img src="../img/biaoshifu.jpg" alt="标识符" title="标识符图片">
+		<div>还有:</div>
+		<span>空格:& nbsp;||</span>
+		<span>小于号:< == & lt;||</span>
+		<span>大于号:> == & gt;</span>
+		<hr>
+		
+		<!-- break用法 -->
+		<h3>break:用于跳出循环</h3>
+		<p> break 语句用于退出 switch 语句或循环语句(for, for ... in, while, do ... while)。<br>
+			当 break 语句用于 switch 语句中时，会跳出 switch 代码块，终止执行代码。<br>
+			当 break 语句用于循环语句时，会终止执行循环，并执行循环后代码(如果有的话)。
+		</p>
+		<p>点击按钮执行循环，并在 i 等于 “3” 的时候跳出循环。</p>
+		<button type="button" onclick="Function()">点击:click</button>
+		<p id="demo" style="height: 65px;"></p>
+		<hr>
+		<script>
+			function Function() {
+				var text = "";
+				var i;
+				for (i = 0; i < 5; i++) {
+					if (i == 3) {
+						break;//当i = 3时，直接停止for循环，后面的都不执行。执行先来后到规则
+					}
+					text += "This Number is " + i + "<br>"
+				}
+				document.getElementById("demo").innerHTML = text;
+			};
+		</script>
+		
+		<!-- continue用法 -->
+		<h3>continue:跳过循环中的一个迭代，并继续执行循环中的下一个迭代。</h3>
+		<p>
+			continue 与 break 语句的区别是， break 是结束整个循环体，continue是结束单次循环。<br>
+			但是，在执行 continue 语句时，表现出了两种不同类型的循环：<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			在 <strong>while</strong> 循环中，会先判断条件，如果条件为 true，循环再执行一次。<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			在 <strong>for</strong> 循环中，自增长表达式 (如：i++) 会先计算，然后再判断条件是否为true，再决定是否执行迭代。
+		</p>
+		<button type="button" onclick="Function1()">点击</button>
+		<p id="demo1" style="height: 80px;"></p><hr>
+		<script>
+			function Function1() {
+				var a;
+				var text1 = "";
+				for (a=0; a<5; a++) {
+					if (a == 3) {
+						continue;//当a=3时，跳过这一个循环，执行下一个循环。
+					}
+					text1 += "This Number is " + a +"<br>";
+				}
+				document.getElementById("demo1").innerHTML = text1;
+			}
+			
+		</script>
+		<!-- catch用法 -->
+		<h3>catch:处理错误。</h3>
+		<p>
+			try 语句测试代码块的错误。<br>
+			catch 语句处理错误。<br>
+			throw 语句创建自定义错误。<br>
+			finally 语句在 try 和 catch 语句之后，无论是否有触发异常，该语句都会执行。<br>
+			<b><ins>try 和 catch 是成对出现的</ins></b>
+		</p>
+		<h4>try 语句块中的函数未定义：</h4>
+		<p id="demo4"></p>
+		<script>
+			try {
+				adddlert("欢迎光临！");
+			}
+			catch(err) {
+				document.getElementById("demo4").innerHTML = err.message;
+			}
+		</script>
+	</body>
+
+	<style>
+		body {
+			background-color: wheat;
+			margin: 0px;
+		}
+
+		img {
+			border: 1px solid black;
+		}
+
+		hr {
+			border: 2px dashed black;
+		}
+		
+	</style>
+</html>
